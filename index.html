@@ -1,3 +1,4 @@
+<!-- ================= FINAL PREMIUM WEBSITE ================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,131 +11,127 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:#0b0f1a;color:#fff;scroll-behavior:smooth}
 
-#loader{position:fixed;width:100%;height:100vh;background:#000;display:flex;justify-content:center;align-items:center;z-index:9999}
-.loader-text{font-size:26px;background:linear-gradient(45deg,#f5b942,#1e90ff);-webkit-background-clip:text;color:transparent}
-
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0;z-index:1000}
-.logo{display:flex;align-items:center;gap:10px}
+/* HEADER */
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0}
 .logo img{height:50px}
-.logo span{font-weight:700;background:linear-gradient(45deg,#f5b942,#1e90ff);-webkit-background-clip:text;color:transparent}
 nav a{margin:0 15px;color:#ccc;text-decoration:none}
 nav a:hover{color:#1e90ff}
 
+/* HERO */
 .hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at top,#0a3d91,#000)}
-.hero h1{font-size:52px;max-width:900px}
-.hero p{max-width:600px;margin:20px 0;color:#aaa}
+.hero h1{font-size:52px;animation:fadeUp 1s ease}
+.hero p{color:#aaa;margin:20px;animation:fadeUp 1.5s ease}
 
-.btn{padding:12px 30px;border:none;border-radius:30px;background:linear-gradient(45deg,#f5b942,#1e90ff);color:#fff;font-weight:600;cursor:pointer}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-.section{padding:80px 20px;text-align:center}
-.section h2{font-size:34px;margin-bottom:40px}
+/* BUTTON */
+.btn{padding:12px 30px;border:none;border-radius:30px;background:linear-gradient(45deg,#f5b942,#1e90ff);color:#fff;font-weight:600;cursor:pointer;transition:0.3s}
+.btn:hover{transform:scale(1.08);box-shadow:0 0 20px #f5b942}
+
+/* SECTIONS */
+.section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(60px);transition:all 0.8s ease}
+.section.show{opacity:1;transform:translateY(0)}
+.section h2{margin-bottom:40px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1100px;margin:auto}
-.card{background:#111a2e;padding:25px;border-radius:15px}
+.card{background:#111a2e;padding:25px;border-radius:15px;transition:0.4s}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 25px #1e90ff}
 
-.stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-.stat h3{color:#f5b942;font-size:32px}
+/* CONTACT */
+.contact{background:linear-gradient(45deg,#0a3d91,#000)}
+.contact form{max-width:600px;margin:auto}
+.contact input,.contact textarea{width:100%;padding:12px;margin:10px 0;border:none;border-radius:8px}
 
-.testimonial{background:#111a2e;padding:20px;border-radius:15px;margin:10px auto;max-width:700px}
-
-.contact-form input,.contact-form textarea{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none}
-
-footer{padding:30px;text-align:center;background:#05080f;color:#777}
-footer a{color:#1e90ff;text-decoration:none;margin:0 8px}
+footer{padding:30px;text-align:center;background:#05080f}
+footer a{color:#1e90ff;margin:0 10px;text-decoration:none}
 
 .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%;color:#fff;text-decoration:none}
-
-/* FIXED CTA (RIGHT SIDE CLEAN) */
-.sticky-cta{
-position:fixed;
-bottom:20px;
-right:80px;
-padding:10px 18px;
-border-radius:25px;
-background:#1e90ff;
-color:#fff;
-text-decoration:none;
-font-weight:500;
-z-index:999;
-}
 
 </style>
 </head>
 
 <body>
 
-<div id="loader"><div class="loader-text">ShivAI Global</div></div>
-
 <header>
-<div class="logo">
-<img src="logo.png">
-<span>ShivAI Global</span>
-</div>
+<div class="logo"><img src="logo.png"></div>
 <nav>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
-<a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section class="hero" id="home">
 <h1>Hire Top Talent Faster. Scale Without Limits.</h1>
-<p>We help companies build high-performing teams quickly and efficiently.</p>
-<button class="btn" onclick="scrollToSection('contact')">Start Hiring Now</button>
+<p>We help businesses build high-performing teams globally.</p>
+<button class="btn" onclick="scrollToSection('contact')">Start Hiring</button>
 </section>
 
 <section class="section" id="services">
 <h2>Our Services</h2>
 <div class="grid">
-<div class="card"><h3>Contract Staffing</h3></div>
-<div class="card"><h3>Permanent Hiring</h3></div>
-<div class="card"><h3>RPO Solutions</h3></div>
-<div class="card"><h3>Workforce Management</h3></div>
+<div class="card">Contract Staffing</div>
+<div class="card">Permanent Hiring</div>
+<div class="card">RPO Solutions</div>
+<div class="card">Remote Teams</div>
 </div>
 </section>
 
-<section class="section" id="stats">
-<h2>Our Impact</h2>
-<div class="stats">
-<div class="stat"><h3>25+</h3><p>Clients</p></div>
-<div class="stat"><h3>5+</h3><p>Countries</p></div>
-<div class="stat"><h3>80+</h3><p>Placements</p></div>
+<section class="section">
+<h2>Industries</h2>
+<div class="grid">
+<div class="card">IT</div>
+<div class="card">Healthcare</div>
+<div class="card">Finance</div>
 </div>
 </section>
 
-<section class="section" id="about">
-<h2>About Us</h2>
-<p>ShivAI Global delivers scalable workforce solutions across industries with speed and precision.</p>
+<section class="section">
+<h2>Why Choose Us</h2>
+<div class="grid">
+<div class="card">Fast Hiring</div>
+<div class="card">Global Talent</div>
+<div class="card">Quality Focus</div>
+</div>
 </section>
 
-<section class="section" id="contact">
+<section class="section">
+<h2>Our Process</h2>
+<div class="grid">
+<div class="card">1. Understand</div>
+<div class="card">2. Source</div>
+<div class="card">3. Deliver</div>
+</div>
+</section>
+
+<section class="section contact" id="contact">
 <h2>Let’s Build Your Team</h2>
-<form class="contact-form" action="https://formspree.io/f/mdawvrrl" method="POST">
+<form action="https://formspree.io/f/mdawvrrl" method="POST">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-<button class="btn" type="submit">Get Free Consultation</button>
+<textarea name="message" placeholder="Your Hiring Needs" required></textarea>
+<button class="btn">Get Free Consultation</button>
 </form>
-<p>Email: Shiv@shivaiglobal.com</p>
-<p>Phone: +91 8179444430</p>
 </section>
 
 <footer>
-<p>
-<a href="privacy.html">Privacy Policy</a> |
-<a href="terms.html">Terms</a> |
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 <a href="disclaimer.html">Disclaimer</a>
-</p>
 <p>© 2026 ShivAI Global</p>
 </footer>
 
-<a href="https://wa.me/918179444430" class="whatsapp">💬</a>
-<a href="#contact" class="sticky-cta">Hire Now</a>
+<a href="https://wa.me/918179444430?text=Hi%20I%20am%20interested" class="whatsapp">💬</a>
 
 <script>
 function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
-window.onload=function(){setTimeout(()=>{document.getElementById('loader').style.display='none'},1000)}
+
+const sections=document.querySelectorAll('.section');
+window.addEventListener('scroll',()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<window.innerHeight-100){sec.classList.add('show')}
+})
+})
 </script>
 
 </body>
