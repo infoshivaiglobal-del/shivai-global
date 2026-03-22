@@ -12,18 +12,13 @@
 body{font-family:'Poppins',sans-serif;background:#0b0f1a;color:#fff;scroll-behavior:smooth}
 
 /* HEADER */
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0} .logo img{height:50px} nav a{margin:0 15px;color:#ccc;text-decoration:none} nav a:hover{color:#1e90ff}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 80px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0}
 
-.logo{
-  display:flex;
-  align-items:center;
-}
+.logo{display:flex;align-items:center}
+.logo img{height:80px;width:auto;object-fit:contain}
 
-.logo img{
-  height:80px;   /* 🔥 increased size */
-  width:auto;
-  object-fit:contain;
-}
+nav a{margin:0 15px;color:#ccc;text-decoration:none}
+nav a:hover{color:#1e90ff}
 
 /* HERO */
 .hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at top,#0a3d91,#000)}
@@ -37,13 +32,19 @@ header{display:flex;justify-content:space-between;align-items:center;padding:20p
 .btn:hover{transform:scale(1.08);box-shadow:0 0 20px #f5b942}
 
 /* SECTIONS */
-.section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(60px);transition:all 0.8s ease}
+.section{padding:100px 20px;text-align:center;opacity:0;transform:translateY(60px);transition:all 0.8s ease}
 .section.show{opacity:1;transform:translateY(0)}
-.section h2{margin-bottom:40px}
+.section h2{font-size:36px;margin-bottom:50px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1100px;margin:auto}
-.card{background:#111a2e;padding:25px;border-radius:15px;transition:0.4s}
+
+.card{background:#111a2e;padding:30px;border-radius:15px;transition:0.4s;text-align:left}
 .card:hover{transform:translateY(-10px);box-shadow:0 0 25px #1e90ff}
+.card h3{margin-bottom:12px}
+.card p{font-size:14px;color:#aaa;margin-bottom:8px}
+
+.section-cta{margin-top:50px}
+.section-cta p{color:#aaa;margin-bottom:15px}
 
 /* CONTACT */
 .contact{background:linear-gradient(45deg,#0a3d91,#000)}
@@ -78,37 +79,72 @@ footer a{color:#1e90ff;margin:0 10px;text-decoration:none}
 <section class="section" id="services">
 <h2>Our Services</h2>
 <div class="grid">
-<div class="card">Contract Staffing</div>
-<div class="card">Permanent Hiring</div>
-<div class="card">RPO Solutions</div>
-<div class="card">Remote Teams</div>
+
+<div class="card">
+<h3>Contract Staffing</h3>
+<p>Scale your team instantly with skilled professionals for both short-term and long-term projects.</p>
+<p><strong>Best for:</strong> Urgent hiring, project delivery</p>
+</div>
+
+<div class="card">
+<h3>Permanent Hiring</h3>
+<p>We connect you with top full-time talent aligned with your company culture and growth plans.</p>
+<p><strong>Best for:</strong> Core team building</p>
+</div>
+
+<div class="card">
+<h3>RPO Solutions</h3>
+<p>End-to-end recruitment outsourcing to streamline hiring and reduce internal workload.</p>
+<p><strong>Best for:</strong> Bulk hiring, scaling companies</p>
+</div>
+
+<div class="card">
+<h3>Dedicated Remote Teams</h3>
+<p>Build reliable remote teams tailored to your business needs and timelines.</p>
+<p><strong>Best for:</strong> Startups & global operations</p>
+</div>
+
+</div>
+
+<div class="section-cta">
+<p>Not sure what fits your business?</p>
+<button class="btn" onclick="scrollToSection('contact')">Talk to an Expert</button>
 </div>
 </section>
 
 <section class="section">
-<h2>Industries</h2>
+<h2>Industries We Serve</h2>
 <div class="grid">
-<div class="card">IT</div>
-<div class="card">Healthcare</div>
-<div class="card">Finance</div>
+
+<div class="card"><h3>💻 IT & Software</h3><p>Developers, QA engineers, DevOps specialists, and full tech teams.</p></div>
+<div class="card"><h3>🏥 Healthcare</h3><p>Medical professionals and healthcare support staff.</p></div>
+<div class="card"><h3>💰 Finance</h3><p>Accountants, analysts, and fintech experts.</p></div>
+<div class="card"><h3>🏭 Manufacturing</h3><p>Skilled labor and operations workforce.</p></div>
+
 </div>
 </section>
 
 <section class="section">
-<h2>Why Choose Us</h2>
+<h2>Why Choose ShivAI Global</h2>
 <div class="grid">
-<div class="card">Fast Hiring</div>
-<div class="card">Global Talent</div>
-<div class="card">Quality Focus</div>
+
+<div class="card"><h3>⚡ Faster Hiring</h3><p>Reduce hiring time with efficient processes.</p></div>
+<div class="card"><h3>🎯 Quality Talent</h3><p>Every candidate is carefully screened.</p></div>
+<div class="card"><h3>🌍 Global Reach</h3><p>Access talent across multiple regions.</p></div>
+<div class="card"><h3>📈 Scalable Solutions</h3><p>Scale your workforce as needed.</p></div>
+
 </div>
 </section>
 
 <section class="section">
 <h2>Our Process</h2>
 <div class="grid">
-<div class="card">1. Understand</div>
-<div class="card">2. Source</div>
-<div class="card">3. Deliver</div>
+
+<div class="card"><h3>1. Requirement Analysis</h3><p>Understand your needs.</p></div>
+<div class="card"><h3>2. Talent Sourcing</h3><p>Find best candidates.</p></div>
+<div class="card"><h3>3. Screening</h3><p>Evaluate quality.</p></div>
+<div class="card"><h3>4. Delivery</h3><p>Provide ready talent.</p></div>
+
 </div>
 </section>
 
