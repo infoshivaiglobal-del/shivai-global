@@ -12,10 +12,27 @@
 body{font-family:'Poppins',sans-serif;background:#0b0f1a;color:#fff;scroll-behavior:smooth}
 
 /* HEADER */
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0}
-.logo img{height:50px}
-nav a{margin:0 15px;color:#ccc;text-decoration:none}
-nav a:hover{color:#1e90ff}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 80px;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:80px;   /* 🔥 increased size */
+  width:auto;
+  object-fit:contain;
+}
 
 /* HERO */
 .hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle at top,#0a3d91,#000)}
