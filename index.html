@@ -12,7 +12,17 @@
 body{font-family:'Poppins',sans-serif;background:#0b0f1a;color:#fff;scroll-behavior:smooth}
 
 /* HEADER */
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 80px;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);position:sticky;top:0}
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000; /* 🔥 FIX */
+}
 
 .logo{display:flex;align-items:center}
 .logo img{height:80px;width:auto;object-fit:contain}
@@ -62,7 +72,10 @@ footer a{color:#1e90ff;margin:0 10px;text-decoration:none}
 <body>
 
 <header>
-<div class="logo"><img src="logo.png"></div>
+<div class="logo">
+<a href="#home"><img src="logo.png"></a> <!-- 🔥 LOGO CLICK FIX -->
+</div>
+
 <nav>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
@@ -115,36 +128,30 @@ footer a{color:#1e90ff;margin:0 10px;text-decoration:none}
 <section class="section">
 <h2>Industries We Serve</h2>
 <div class="grid">
-
 <div class="card"><h3>💻 IT & Software</h3><p>Developers, QA engineers, DevOps specialists, and full tech teams.</p></div>
 <div class="card"><h3>🏥 Healthcare</h3><p>Medical professionals and healthcare support staff.</p></div>
 <div class="card"><h3>💰 Finance</h3><p>Accountants, analysts, and fintech experts.</p></div>
 <div class="card"><h3>🏭 Manufacturing</h3><p>Skilled labor and operations workforce.</p></div>
-
 </div>
 </section>
 
 <section class="section">
 <h2>Why Choose ShivAI Global</h2>
 <div class="grid">
-
 <div class="card"><h3>⚡ Faster Hiring</h3><p>Reduce hiring time with efficient processes.</p></div>
 <div class="card"><h3>🎯 Quality Talent</h3><p>Every candidate is carefully screened.</p></div>
 <div class="card"><h3>🌍 Global Reach</h3><p>Access talent across multiple regions.</p></div>
 <div class="card"><h3>📈 Scalable Solutions</h3><p>Scale your workforce as needed.</p></div>
-
 </div>
 </section>
 
 <section class="section">
 <h2>Our Process</h2>
 <div class="grid">
-
 <div class="card"><h3>1. Requirement Analysis</h3><p>Understand your needs.</p></div>
 <div class="card"><h3>2. Talent Sourcing</h3><p>Find best candidates.</p></div>
 <div class="card"><h3>3. Screening</h3><p>Evaluate quality.</p></div>
 <div class="card"><h3>4. Delivery</h3><p>Provide ready talent.</p></div>
-
 </div>
 </section>
 
@@ -173,7 +180,9 @@ function scrollToSection(id){document.getElementById(id).scrollIntoView({behavio
 const sections=document.querySelectorAll('.section');
 window.addEventListener('scroll',()=>{
 sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-100){sec.classList.add('show')}
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
+sec.classList.add('show')
+}
 })
 })
 </script>
